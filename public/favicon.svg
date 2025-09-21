@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Water Droplet</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M16,3 C16,3 6,13.5 6,20.5 C6,25.75 10.5,30 16,30 C21.5,30 26,25.75 26,20.5 C26,13.5 16,3 16,3 Z" fill="#4A90A8" fill-rule="nonzero"></path>
+        <path d="M16,26 C13,26 10.5,23.5 10.5,20.5 C10.5,19.0670034 11.4080035,16.9226464 13.2240104,14.2669291 C14.0268921,13.0849472 14.9504947,11.8662368 16,10.6108181 C17.0495053,11.8662368 17.9731079,13.0849472 18.7759896,14.2669291 C20.5919965,16.9226464 21.5,19.0670034 21.5,20.5 C21.5,23.5 19,26 16,26 Z" fill="#ADE1E5" fill-rule="nonzero"></path>
+    </g>
+</svg>

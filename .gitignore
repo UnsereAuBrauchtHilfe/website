@@ -65,7 +65,7 @@ jspm_packages/
 .nuxt/
 
 # Gatsby files
-public/
+# public/ - REMOVED: We need public/images/ for Vite
 
 # Storybook build outputs
 .out/
