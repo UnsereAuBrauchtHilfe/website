@@ -40,7 +40,7 @@ const Problem: React.FC = () => {
           </div>
           <div className="h-64 md:h-auto overflow-hidden rounded-lg shadow-lg">
             <img 
-              src="/images/Verlandung.jpg" 
+              src="/images/Verlandung.png" 
               alt="Verlandung der Au" 
               className="w-full h-full object-cover"
             />
@@ -64,11 +64,11 @@ const Problem: React.FC = () => {
               </li>
               <li className="flex items-start">
                 <span className="inline-block mr-2 text-secondary">•</span>
-                <span>Schlammpackungen statt Badespaß? Das wollen wir nicht.</span>
+                <span>Schlammpackungen statt Wasserfreuden? Das wollen wir nicht.</span>
               </li>
               <li className="flex items-start">
                 <span className="inline-block mr-2 text-secondary">•</span>
-                <span>Sauberes Grundwasser in Gefahr? Bitte nein.</span>
+                <span>Sauberes Grundwasser in Gefahr? Bitte nicht.</span>
               </li>
               <li className="flex items-start">
                 <span className="inline-block mr-2 text-secondary">•</span>

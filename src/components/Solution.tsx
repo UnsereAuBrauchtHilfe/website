@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle } from 'lucide-react';
 
 const Solution: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -48,6 +48,70 @@ const Solution: React.FC = () => {
                   Sanfte Eingriffe zur stärkeren Durchströmung der Au mit Donauwasser können unsere Au retten. 
                   Wir bitten alle Entscheidungsträger um gemeinsames, beherztes Vorgehen, um den Plan für eine 
                   hydrologische und ökologische Sanierung zu erarbeiten und umzusetzen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Forderungen Sektion */}
+        <div className="max-w-4xl mx-auto mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">
+              Unsere Forderungen
+            </h3>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Wir fordern von den Entscheidungsträgern ein rasches und entschlossenes Handeln 
+              zur Rettung der Klosterneuburger Au.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:gap-8">
+            
+            {/* Forderung 1 */}
+            <div className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="flex-shrink-0 mt-1">
+                <CheckCircle className="w-6 h-6 text-secondary" />
+              </div>
+              <div className="flex-1">
+                <h4 className="text-lg font-semibold mb-2 text-gray-800">
+                  Sofortige Planung einer hydrologischen Sanierung
+                </h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Wir fordern die umgehende Erarbeitung eines konkreten Plans zur Verbesserung 
+                  der Durchströmung der Au mit Donauwasser.
+                </p>
+              </div>
+            </div>
+
+            {/* Forderung 2 */}
+            <div className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="flex-shrink-0 mt-1">
+                <CheckCircle className="w-6 h-6 text-secondary" />
+              </div>
+              <div className="flex-1">
+                <h4 className="text-lg font-semibold mb-2 text-gray-800">
+                  Koordiniertes Vorgehen aller Beteiligten
+                </h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Stadt, Land und Experten müssen gemeinsam an einem Strang ziehen, 
+                  um die ökologische Sanierung erfolgreich umzusetzen.
+                </p>
+              </div>
+            </div>
+
+            {/* Forderung 3 */}
+            <div className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="flex-shrink-0 mt-1">
+                <CheckCircle className="w-6 h-6 text-secondary" />
+              </div>
+              <div className="flex-1">
+                <h4 className="text-lg font-semibold mb-2 text-gray-800">
+                  Finanzierung und Umsetzung sicherstellen
+                </h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Die notwendigen Mittel müssen bereitgestellt und die Maßnahmen 
+                  zeitnah umgesetzt werden - bevor es zu spät ist.
                 </p>
               </div>
             </div>

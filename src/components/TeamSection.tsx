@@ -3,23 +3,39 @@ import { Users, ChevronDown } from 'lucide-react';
 
 const TeamSection: React.FC = () => {
   const [showAllMembers, setShowAllMembers] = useState(false);
+  const [shuffledTeamMembers, setShuffledTeamMembers] = useState<string[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
 
-  const teamMembers = [
+  const originalTeamMembers = [
     "Angela Andorrer (Mitinitiatorin)",
     "Eduard Böhler (Vorstand Strandbadsiedlung, Mitinitiator)",
     "Laurenz Lanik (Mitintiator)",
-    "Ines Lemberger (Boku Wien, Mitinitiatorin)",
+    "Ines Lemberger (Mitinitiatorin)",
     "Theodora Manolakos (Mitinitiatorin)",
     "Christian Seethaler (Mitinitiator)",
-    "Peter Steiner (Bezirksorganisation Klosterneuburg und Umgebung, Mitinitiator)",
+    "Peter Steiner (Kleingartenvereine Bezirksorganisation Klosterneuburg und Umgebung, Mitinitiator)",
     "Karl Valenta (Vorstand Strandbadsiedlung)",
     "Ilse Wrbka (Naturschutzbunds Klosterneuburg, Mitinitiatorin)",
-    "Thomas Wrbka (Naturschutzbund Österreich, Mitinitiator)",
+    "Thomas Wrbka (Präsident Naturschutzbund Österreich, Mitinitiator)",
     "Peter Zulka (Bundesumweltamt)"
   ];
 
-  const visibleMembers = showAllMembers ? teamMembers : teamMembers.slice(0, 6);
+  // Fisher-Yates Shuffle Algorithmus
+  const shuffleArray = (array: string[]) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  // Team-Mitglieder einmalig beim ersten Laden shuffeln
+  useEffect(() => {
+    setShuffledTeamMembers(shuffleArray(originalTeamMembers));
+  }, []);
+
+  const visibleMembers = showAllMembers ? shuffledTeamMembers : shuffledTeamMembers.slice(0, 6);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -57,8 +73,8 @@ const TeamSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visibleMembers.map((person, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg shadow-md">
+          {visibleMembers.map((person) => (
+            <div key={person} className="bg-white p-4 rounded-lg shadow-md">
               <p className="text-center">{person}</p>
             </div>
           ))}
@@ -76,7 +92,7 @@ const TeamSection: React.FC = () => {
 
         <div className="text-center mt-12">
           <a 
-            href="https://www.change.org/"
+            href="https://www.openpetition.eu/at/petition/online/keine-deponie-im-naturschutzgebiet-jetzt-handeln"
             target="_blank"
             rel="noopener noreferrer"
             className="button-cta"
