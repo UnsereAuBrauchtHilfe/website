@@ -1,40 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import CountUp from 'react-countup';
 
 const Hero: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [signatureCount, setSignatureCount] = useState(3992); // Fallback Wert
-  const [isLoadingSignatures, setIsLoadingSignatures] = useState(true);
-
-  // Live Signature Count von Railway API abrufen
-  useEffect(() => {
-    const fetchSignatureCount = async () => {
-      try {
-        console.log('🔄 Fetching live signature count...');
-        const response = await fetch('https://openpetitionscraper-production.up.railway.app/api/signatures/current');
-        
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-        
-        const data = await response.json();
-        console.log('✅ Live signature data:', data);
-        
-        if (data.count && typeof data.count === 'number' && data.count > 0) {
-          setSignatureCount(data.count);
-          console.log(`📊 Updated signature count: ${data.count}`);
-        }
-      } catch (error) {
-        console.warn('⚠️ Could not fetch live signature count, using fallback:', error);
-        // Fallback zur statischen Zahl - kein Error für User
-      } finally {
-        setIsLoadingSignatures(false);
-      }
-    };
-
-    fetchSignatureCount();
-  }, []);
+  // API Call entfernt - nicht mehr benötigt für statischen Text
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -82,20 +51,7 @@ const Hero: React.FC = () => {
               Jetzt Petition unterstützen
             </a>
             <p className="text-lg mb-12 drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]">
-              Bereits{' '}
-              {isLoadingSignatures ? (
-                <span className="inline-flex items-center font-bold">
-                  <span className="animate-pulse">...</span>
-                </span>
-              ) : (
-                <CountUp 
-                  end={signatureCount} 
-                  duration={2} 
-                  separator="." 
-                  className="font-bold" 
-                />
-              )}{' '}
-              Unterstützer:innen haben unterschrieben.
+              Natur und Mensch sagen Danke.
             </p>
           </div>
         </div>

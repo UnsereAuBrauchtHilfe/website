@@ -55,65 +55,67 @@ const Solution: React.FC = () => {
         </div>
 
         {/* Forderungen Sektion */}
-        <div className="max-w-4xl mx-auto mb-20">
+        <div className="max-w-5xl mx-auto mb-20">
           <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">
-              Unsere Forderungen
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
+              Jetzt muss gehandelt werden!
             </h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Wir fordern von den Entscheidungsträgern ein rasches und entschlossenes Handeln 
-              zur Rettung der Klosterneuburger Au.
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Wir ersuchen die Gemeinde Klosterneuburg, das Land Niederösterreich, den Bund, das Chorherrenstift Klosterneuburg sowie den Verbund um
             </p>
           </div>
+          
+          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 md:p-12 rounded-2xl shadow-lg">
+            <div className="grid gap-6 max-w-3xl mx-auto">
+              
+              {/* Forderung 1 */}
+              <div className="flex items-start space-x-4 bg-white/70 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-xl font-semibold text-gray-800">
+                    rasche Etablierung einer Projektgruppe
+                  </h4>
+                </div>
+              </div>
 
-          <div className="grid gap-6 md:gap-8">
-            
-            {/* Forderung 1 */}
-            <div className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex-shrink-0 mt-1">
-                <CheckCircle className="w-6 h-6 text-secondary" />
+              {/* Forderung 2 */}
+              <div className="flex items-start space-x-4 bg-white/70 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-xl font-semibold text-gray-800">
+                    Einholung der ergänzenden Gutachten
+                  </h4>
+                </div>
               </div>
-              <div className="flex-1">
-                <h4 className="text-lg font-semibold mb-2 text-gray-800">
-                  Sofortige Planung einer hydrologischen Sanierung
-                </h4>
-                <p className="text-gray-600 leading-relaxed">
-                  Wir fordern die umgehende Erarbeitung eines konkreten Plans zur Verbesserung 
-                  der Durchströmung der Au mit Donauwasser.
-                </p>
-              </div>
-            </div>
 
-            {/* Forderung 2 */}
-            <div className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex-shrink-0 mt-1">
-                <CheckCircle className="w-6 h-6 text-secondary" />
+              {/* Forderung 3 */}
+              <div className="flex items-start space-x-4 bg-white/70 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-xl font-semibold text-gray-800">
+                    Klärung der Finanzierung
+                  </h4>
+                </div>
               </div>
-              <div className="flex-1">
-                <h4 className="text-lg font-semibold mb-2 text-gray-800">
-                  Koordiniertes Vorgehen aller Beteiligten
-                </h4>
-                <p className="text-gray-600 leading-relaxed">
-                  Stadt, Land und Experten müssen gemeinsam an einem Strang ziehen, 
-                  um die ökologische Sanierung erfolgreich umzusetzen.
-                </p>
-              </div>
-            </div>
 
-            {/* Forderung 3 */}
-            <div className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex-shrink-0 mt-1">
-                <CheckCircle className="w-6 h-6 text-secondary" />
+              {/* Forderung 4 */}
+              <div className="flex items-start space-x-4 bg-white/70 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-xl font-semibold text-gray-800">
+                    zeitnahe Umsetzung des Sanierungsprojektes
+                  </h4>
+                </div>
               </div>
-              <div className="flex-1">
-                <h4 className="text-lg font-semibold mb-2 text-gray-800">
-                  Finanzierung und Umsetzung sicherstellen
-                </h4>
-                <p className="text-gray-600 leading-relaxed">
-                  Die notwendigen Mittel müssen bereitgestellt und die Maßnahmen 
-                  zeitnah umgesetzt werden - bevor es zu spät ist.
-                </p>
-              </div>
+
             </div>
           </div>
         </div>

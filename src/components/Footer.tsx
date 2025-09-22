@@ -1,5 +1,5 @@
 import React from 'react';
-import { Droplet, Facebook, Instagram, Mail } from 'lucide-react';
+import { Droplet, Facebook, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center mb-4">
               <Droplet className="mr-2" size={24} />
-              <h3 className="text-xl font-bold">Retten wir unser Wasser!</h3>
+              <h3 className="text-xl font-bold">Unsere Au braucht Hilfe!</h3>
             </div>
             <p className="mb-4">
               Gemeinsam für den Erhalt unseres wertvollen Naturgebiets und Grundwasserspeichers.
@@ -24,29 +24,26 @@ const Footer: React.FC = () => {
               Klosterneuburger Au zu retten.
             </p>
             <a 
-              href="https://www.change.org/"
+              href="https://www.openpetition.eu/at/petition/online/keine-deponie-im-naturschutzgebiet-jetzt-handeln"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline hover:text-primary-dark transition-colors"
             >
-              Zur Petition auf change.org
+              Zur Petition auf openpetition.eu
             </a>
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4">Kontakt & Social Media</h3>
+            <h3 className="text-xl font-bold mb-4">Social Media</h3>
             <div className="flex space-x-4 mb-6">
               <a href="#" className="text-white hover:text-primary-dark transition-colors">
                 <Facebook size={24} />
               </a>
-              <a href="#" className="text-white hover:text-primary-dark transition-colors">
-                <Instagram size={24} />
-              </a>
-              <a href="mailto:info@rettenwirunserwasser.at" className="text-white hover:text-primary-dark transition-colors">
+              <a href="mailto:petition@unsereaubrauchthilfe.at" className="text-white hover:text-primary-dark transition-colors">
                 <Mail size={24} />
               </a>
             </div>
-            <p>info@rettenwirunserwasser.at</p>
+            <p>petition@unsereaubrauchthilfe.at</p>
           </div>
         </div>
         

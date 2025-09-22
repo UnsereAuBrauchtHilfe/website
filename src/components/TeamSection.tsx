@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Users, ChevronDown } from 'lucide-react';
+import { Users } from 'lucide-react';
 
 const TeamSection: React.FC = () => {
-  const [showAllMembers, setShowAllMembers] = useState(false);
   const [shuffledTeamMembers, setShuffledTeamMembers] = useState<string[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -13,7 +12,7 @@ const TeamSection: React.FC = () => {
     "Ines Lemberger (Mitinitiatorin)",
     "Theodora Manolakos (Mitinitiatorin)",
     "Christian Seethaler (Mitinitiator)",
-    "Peter Steiner (Kleingartenvereine Bezirksorganisation Klosterneuburg und Umgebung, Mitinitiator)",
+    "Peter Steiner (Bezirksorganisation Kleingartenvereine Klosterneuburg und Umgebung, Mitinitiator)",
     "Karl Valenta (Vorstand Strandbadsiedlung)",
     "Ilse Wrbka (Naturschutzbunds Klosterneuburg, Mitinitiatorin)",
     "Thomas Wrbka (Präsident Naturschutzbund Österreich, Mitinitiator)",
@@ -35,7 +34,7 @@ const TeamSection: React.FC = () => {
     setShuffledTeamMembers(shuffleArray(originalTeamMembers));
   }, []);
 
-  const visibleMembers = showAllMembers ? shuffledTeamMembers : shuffledTeamMembers.slice(0, 6);
+  const visibleMembers = shuffledTeamMembers;
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -78,16 +77,6 @@ const TeamSection: React.FC = () => {
               <p className="text-center">{person}</p>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-8">
-          <button 
-            onClick={() => setShowAllMembers(!showAllMembers)}
-            className="flex items-center mx-auto space-x-2 text-secondary hover:text-primary-dark transition-colors"
-          >
-            <span>{showAllMembers ? 'Weniger anzeigen' : 'Alle Unterstützer anzeigen'}</span>
-            <ChevronDown className={`transform transition-transform ${showAllMembers ? 'rotate-180' : ''}`} />
-          </button>
         </div>
 
         <div className="text-center mt-12">
