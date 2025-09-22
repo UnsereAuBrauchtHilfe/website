@@ -8,15 +8,15 @@ const TeamSection: React.FC = () => {
   const originalTeamMembers = [
     "Angela Andorrer (Mitinitiatorin)",
     "Eduard Böhler (Vorstand Strandbadsiedlung, Mitinitiator)",
-    "Laurenz Lanik (Mitintiator)",
+    "Laurenz Lanik (Mitinitiator)",
     "Ines Lemberger (Mitinitiatorin)",
     "Theodora Manolakos (Mitinitiatorin)",
     "Christian Seethaler (Mitinitiator)",
     "Peter Steiner (Bezirksorganisation Kleingartenvereine Klosterneuburg und Umgebung, Mitinitiator)",
     "Karl Valenta (Vorstand Strandbadsiedlung)",
-    "Ilse Wrbka (Naturschutzbunds Klosterneuburg, Mitinitiatorin)",
+    "Ilse Wrbka (Naturschutzbund Klosterneuburg, Mitinitiatorin)",
     "Thomas Wrbka (Präsident Naturschutzbund Österreich, Mitinitiator)",
-    "Peter Zulka (Bundesumweltamt)"
+    "Peter Zulka (Mitinitiator)"
   ];
 
   // Fisher-Yates Shuffle Algorithmus
