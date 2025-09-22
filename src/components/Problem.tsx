@@ -89,7 +89,7 @@ const Problem: React.FC = () => {
             </div>
             <div className="mt-6 md:mt-0 md:ml-6">
               <a 
-                href="https://www.openpetition.eu/at/petition/online/keine-deponie-im-naturschutzgebiet-jetzt-handeln"
+                href="https://www.openpetition.eu/at/petition/online/unsere-au-braucht-hilfe-der-klosterneuburger-au-droht-die-verlandung-3"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"

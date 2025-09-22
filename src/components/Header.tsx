@@ -66,7 +66,7 @@ const Header: React.FC = () => {
             </li>
             <li>
               <a 
-                href="https://www.change.org/" 
+                href="https://www.openpetition.eu/at/petition/online/unsere-au-braucht-hilfe-der-klosterneuburger-au-droht-die-verlandung-3" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="button-cta text-sm py-1 px-3 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]"

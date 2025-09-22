@@ -26,7 +26,7 @@ const CallToAction: React.FC = () => {
               Natur und Mensch sagen Danke!
             </p>
             <a 
-              href="https://www.openpetition.eu/at/petition/online/keine-deponie-im-naturschutzgebiet-jetzt-handeln"
+              href="https://www.openpetition.eu/at/petition/online/unsere-au-braucht-hilfe-der-klosterneuburger-au-droht-die-verlandung-3"
               target="_blank"
               rel="noopener noreferrer"
               className="button-cta text-lg inline-flex items-center"
