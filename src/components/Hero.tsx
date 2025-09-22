@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
               Jetzt Petition unterstützen
             </a>
             <p className="text-lg mb-12 drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]">
-              Natur und Mensch sagen Danke.
+              Natur und Mensch sagen Danke!
             </p>
           </div>
         </div>

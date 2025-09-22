@@ -60,7 +60,7 @@ const Solution: React.FC = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
               Jetzt muss gehandelt werden!
             </h3>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl font-semibold text-gray-800 max-w-4xl mx-auto leading-relaxed">
               Wir ersuchen die Gemeinde Klosterneuburg, das Land Niederösterreich, den Bund, das Chorherrenstift Klosterneuburg sowie den Verbund um
             </p>
           </div>
