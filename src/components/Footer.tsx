@@ -36,7 +36,12 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Social Media</h3>
             <div className="flex space-x-4 mb-6">
-              <a href="#" className="text-white hover:text-primary-dark transition-colors">
+              <a 
+                href="https://www.facebook.com/unsereaubrauchthilfe/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-primary-dark transition-colors"
+              >
                 <Facebook size={24} />
               </a>
               <a href="mailto:petition@unsereaubrauchthilfe.at" className="text-white hover:text-primary-dark transition-colors">
