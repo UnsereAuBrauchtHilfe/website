@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Sparkles, ArrowRight, CheckCircle } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 const Solution: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
