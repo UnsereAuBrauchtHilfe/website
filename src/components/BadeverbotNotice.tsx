@@ -123,6 +123,12 @@ const BadeverbotNotice: React.FC = () => {
             onClick={(event) => event.stopPropagation()}
           >
             {activeDocument === 'gemeinde' ? (
+              <img
+                src={publicationImage}
+                alt="Brief der Gemeinde Klosterneuburg zum Badeverbot am Altarm Geschirrwasser"
+                className="mx-auto max-h-[85vh] w-auto rounded-lg bg-white object-contain shadow-2xl"
+              />
+            ) : (
               <article className="mx-auto max-h-[85vh] overflow-y-auto rounded-lg bg-white p-6 text-gray-900 shadow-2xl md:p-10">
                 <h3 className="mb-6 text-3xl font-normal">Altarm im Strandbad gesperrt</h3>
                 <p className="mb-5 text-lg font-bold leading-relaxed">
@@ -147,12 +153,6 @@ const BadeverbotNotice: React.FC = () => {
                   Quelle: Homepage der Stadtgemeinde Klosterneuburg
                 </p>
               </article>
-            ) : (
-              <img
-                src={publicationImage}
-                alt="Veröffentlichung der Bezirkshauptmannschaft Tulln zum Badeverbot am Altarm Geschirrwasser"
-                className="mx-auto max-h-[85vh] w-auto rounded-lg bg-white object-contain shadow-2xl"
-              />
             )}
           </div>
         </div>
