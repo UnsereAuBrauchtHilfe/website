@@ -109,19 +109,19 @@ const BadeverbotNotice: React.FC = () => {
               : 'Bescheid der Bezirkshauptmannschaft Tulln'
           }
         >
+          <button
+            type="button"
+            onClick={closeLightbox}
+            className="fixed right-4 top-4 z-[110] inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-900 shadow-lg transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+            aria-label="Dokument schließen"
+          >
+            <X className="h-6 w-6" />
+          </button>
+
           <div
             className="relative max-h-full w-full max-w-3xl overflow-y-auto"
             onClick={(event) => event.stopPropagation()}
           >
-            <button
-              type="button"
-              onClick={closeLightbox}
-              className="absolute -right-2 -top-12 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-900 shadow-lg transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black md:-right-4"
-              aria-label="Dokument schließen"
-            >
-              <X className="h-6 w-6" />
-            </button>
-
             {activeDocument === 'gemeinde' ? (
               <article className="mx-auto max-h-[85vh] overflow-y-auto rounded-lg bg-white p-6 text-gray-900 shadow-2xl md:p-10">
                 <h3 className="mb-6 text-3xl font-normal">Altarm im Strandbad gesperrt</h3>
