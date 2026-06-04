@@ -6,17 +6,19 @@ const petitionUrl =
 
 const publicationImage = '/images/badeverbot-geschirrwasser.jpg';
 
+type NoticeDocument = 'gemeinde' | 'bh';
+
 const BadeverbotNotice: React.FC = () => {
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [activeDocument, setActiveDocument] = useState<NoticeDocument | null>(null);
 
   useEffect(() => {
-    if (!isLightboxOpen) {
+    if (!activeDocument) {
       return;
     }
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setIsLightboxOpen(false);
+        setActiveDocument(null);
       }
     };
 
@@ -27,7 +29,9 @@ const BadeverbotNotice: React.FC = () => {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isLightboxOpen]);
+  }, [activeDocument]);
+
+  const closeLightbox = () => setActiveDocument(null);
 
   return (
     <section className="bg-red-50 py-10 md:py-14">
@@ -57,15 +61,26 @@ const BadeverbotNotice: React.FC = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-                <button
-                  type="button"
-                  onClick={() => setIsLightboxOpen(true)}
-                  className="inline-flex items-center text-left font-semibold text-red-700 underline decoration-2 underline-offset-4 transition-colors hover:text-red-900"
-                >
-                  <FileText className="mr-2 h-5 w-5 flex-shrink-0" />
-                  Veröffentlichung der Gemeinde Klosterneuburg ansehen
-                </button>
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+                <div className="flex flex-col items-start gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setActiveDocument('gemeinde')}
+                    className="inline-flex items-center text-left font-semibold text-red-700 underline decoration-2 underline-offset-4 transition-colors hover:text-red-900"
+                  >
+                    <FileText className="mr-2 h-5 w-5 flex-shrink-0" />
+                    Brief der Gemeinde Klosterneuburg ansehen
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setActiveDocument('bh')}
+                    className="inline-flex items-center text-left font-semibold text-red-700 underline decoration-2 underline-offset-4 transition-colors hover:text-red-900"
+                  >
+                    <FileText className="mr-2 h-5 w-5 flex-shrink-0" />
+                    Bescheid der BH ansehen
+                  </button>
+                </div>
 
                 <a
                   href={petitionUrl}
@@ -82,31 +97,63 @@ const BadeverbotNotice: React.FC = () => {
         </div>
       </div>
 
-      {isLightboxOpen && (
+      {activeDocument && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4"
-          onClick={() => setIsLightboxOpen(false)}
+          onClick={closeLightbox}
           role="dialog"
           aria-modal="true"
-          aria-label="Veröffentlichung der Gemeinde Klosterneuburg"
+          aria-label={
+            activeDocument === 'gemeinde'
+              ? 'Brief der Gemeinde Klosterneuburg'
+              : 'Bescheid der Bezirkshauptmannschaft Tulln'
+          }
         >
           <div
-            className="relative max-h-full w-full max-w-3xl"
+            className="relative max-h-full w-full max-w-3xl overflow-y-auto"
             onClick={(event) => event.stopPropagation()}
           >
             <button
               type="button"
-              onClick={() => setIsLightboxOpen(false)}
+              onClick={closeLightbox}
               className="absolute -right-2 -top-12 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-900 shadow-lg transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black md:-right-4"
-              aria-label="Veröffentlichung schließen"
+              aria-label="Dokument schließen"
             >
               <X className="h-6 w-6" />
             </button>
-            <img
-              src={publicationImage}
-              alt="Veröffentlichung der Bezirkshauptmannschaft Tulln zum Badeverbot am Altarm Geschirrwasser"
-              className="mx-auto max-h-[85vh] w-auto rounded-lg bg-white object-contain shadow-2xl"
-            />
+
+            {activeDocument === 'gemeinde' ? (
+              <article className="mx-auto max-h-[85vh] overflow-y-auto rounded-lg bg-white p-6 text-gray-900 shadow-2xl md:p-10">
+                <h3 className="mb-6 text-3xl font-normal">Altarm im Strandbad gesperrt</h3>
+                <p className="mb-5 text-lg font-bold leading-relaxed">
+                  Aufgrund letzter Untersuchungsergebnisse des Wassers im Altarm im Strandbad
+                  Klosterneuburg wurde seitens der Bezirkshauptmannschaft Tulln per Verordnung
+                  ein allgemeines Badeverbot verhängt. Dies betrifft nicht die
+                  Schwimmbeckenanlagen.
+                </p>
+                <p className="mb-5 text-lg leading-relaxed">
+                  Laut Prüfbericht der Eurofins Umweltanalytik Österreich GmbH vom 27. Mai 2026
+                  hat eine Badewasseruntersuchung des Flussbades „Altarm Geschirrwasser” am 12.
+                  Mai 2026 eine Gefährdung der Badegäste durch eine mögliche Massenentwicklung
+                  bzw. ein Freisetzen von Cyanobakterientoxine ergeben. Das Gewässer entspreche
+                  in chemisch-physikalischer Hinsicht, auf Grund der stark verminderten
+                  Sichttiefe sowie den erhöhten Parameterwerten von Oxidierbarkeit, Phosphor und
+                  Chlorophyll-a nicht den Anforderungen an Badegewässer. Durch mögliche
+                  Badewasserinfektionen sei eine Gefährdung der Gesundheit gegeben. Eine
+                  Kontrolluntersuchung wurde unverzüglich in Auftrag gegeben. Bis weitere
+                  Ergebnisse vorliegen bleibt das Badeverbot im Altarm aufrecht.
+                </p>
+                <p className="text-lg leading-relaxed">
+                  Quelle: Homepage der Stadtgemeinde Klosterneuburg
+                </p>
+              </article>
+            ) : (
+              <img
+                src={publicationImage}
+                alt="Veröffentlichung der Bezirkshauptmannschaft Tulln zum Badeverbot am Altarm Geschirrwasser"
+                className="mx-auto max-h-[85vh] w-auto rounded-lg bg-white object-contain shadow-2xl"
+              />
+            )}
           </div>
         </div>
       )}
